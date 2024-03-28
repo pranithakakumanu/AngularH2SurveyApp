@@ -1,0 +1,6 @@
+Open FrontEnd folder in VS code and run "npm install" and then "ng serve" on terminal
+
+Open backend Code and run it on IntelliJ 
+
+
+Open localhost:4200 on browser and you can access the app

@@ -1,0 +1,34 @@
+<!-- <nav class="navbar navbar-dark bg-dark  navbar-expand-lg border">
+  <div class="container-fluid">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="CS.html">CS Page</a>
+          <a class="nav-item nav-link" href="form.html">Survey Form</a>
+          <a class="nav-item nav-link" href="website.html">About Me</a>
+      </div>
+  </div>
+</nav> -->
+<br>
+
+<div class="row">
+
+  <div class="col-8 offset-2">
+
+      <!-- header Jumbotron with border and color -->
+
+      <div class=" shadow-lg jumbotron jumbotron-fluid border">
+          <div class="container">
+              <h1 class="display-4 custom-font">Department of Computer Science</h1>
+              <p class="lead"></p>
+          </div>
+      </div>
+
+
+      <div class="pd-10 text-center">
+          <button (click)="survey()" type="button" class="btn green btn-lg btn-block custom-font1">Student Survey</button>
+          <button (click)="listSurvey()" type="button" class="btn green btn-lg btn-block custom-font1">List All Surveys</button>
+
+      </div>
+      <br>
+  </div>
+</div>
+<router-outlet></router-outlet>

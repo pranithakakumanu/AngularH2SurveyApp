@@ -1,0 +1,167 @@
+<!-- 
+    This File has the survey form, submit and reset buttons
+-->
+<div class="row">
+            
+        <div class="col-8 offset-2">
+
+            <div class="custom-font">
+                    <h2 class="custom-type">Prospective Student Survey</h2>
+                    <!--Form begins -->
+
+
+                    <form class="row g-3 needs-validation" autocomplete="on" id="survey-form" [formGroup]="surveyForm" ngNativeValidate>
+                        <!--Fields and  validations added -->
+
+                        <div class="col-md-6 form-group" ngClass="
+                            'has-error': !surveyForm.get('firstName').valid && surveyForm.get('firstName').touched">
+                            <label for="firstName" class="form-label ">First Name<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="username" placeholder="e.g. First Name" required formControlName="firstName"
+                                autofocus />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label ">Last Name<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="e.g. Last Name" required formControlName="lastName" />
+                        </div>
+
+
+                        <div class="col-6">
+                            <label for="street_address" class="form-label">Street Address<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="street_address" required formControlName="streetAddress" 
+                                placeholder="e.g. 123 Main St" />
+                        </div>
+
+                        <div class="col-6">
+                            <label for="city" class="form-label">City<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="city" required formControlName="city" 
+                                placeholder="e.g. Fairfax" />
+                            <!-- <div id="city"></div> -->
+                        </div>
+
+                        <div class="col-4">
+                            <label for="state" class="form-label">State<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="state" required formControlName="state" 
+                                placeholder="e.g. VA" />
+                            <!-- <div id="state"></div> -->
+                        </div>
+
+                        <div class="col-2">
+                            <label for="zip" class="form-label">Zip<sup>*</sup>:</label>
+                            <input type="text" class="form-control" id="zip" formControlName="zip" required  placeholder="e.g. 22030"/>
+                            <div class="error" id="error-zip"></div>
+                        </div>
+                        
+
+                        <div class="col-6">
+                            <label for="telephone" class="form-label">Telephone<sup>*</sup>:</label>
+                            <input type="tel" class="form-control" id="telephone" required formControlName="telephone" 
+                                placeholder="e.g. (571) 555-1734" />
+                        </div>
+
+                        <div class="col-6">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" id="email" required formControlName="email" 
+                                placeholder="e.g. test@example.com" />
+                        </div>
+                        <div class="col-6">
+                            <label for="date" class="form-label">Date of Survey <sup>*</sup></label>
+                            <input type="date" class="form-control" id="date" required formControlName="surveyDate"  placeholder="" />
+                        </div>
+                        <div class="col-12">
+
+                            <label for="likes" class="form-label">What did you like most about the campus?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_students" [formControl]="$any(checkboxes).controls['students']"
+                                    value="students">
+                                <label class="form-check-label" for="likes_students">Students</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_location" [formControl]="$any(checkboxes).controls['location']"
+                                    value="location">
+                                <label class="form-check-label" for="likes_location">Location</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_campus" [formControl]="$any(checkboxes).controls['campus']"
+                                    value="campus">
+                                <label class="form-check-label" for="likes_campus">Campus</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_atmosphere" [formControl]="$any(checkboxes).controls['atmosphere']"
+                                    value="atmosphere">
+                                <label class="form-check-label" for="likes_atmosphere">Atmosphere</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_dorm_rooms" [formControl]="$any(checkboxes).controls['dorm']"
+                                    value="dorm rooms">
+                                <label class="form-check-label" for="likes_dorm_rooms">Dorm Rooms</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="likes_sports" [formControl]="$any(checkboxes).controls['students']"
+                                    value="sports">
+                                <label class="form-check-label" for="likes_sports">Sports</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">How did you become interested in the university?</label>
+                            <!-- Radio buttons-->
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="interest_friends" formControlName="interestedIn"
+                                    value="friends">
+                                <label class="form-check-label" for="interest_friends">Friends</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="interest_tv" formControlName="interestedIn"
+                                    value="television">
+                                <label class="form-check-label" for="interest_tv">Television</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="interest_internet" formControlName="interestedIn"
+                                    value="internet">
+                                <label class="form-check-label" for="interest_internet">Internet</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="interest_other" formControlName="interestedIn"
+                                    value="other">
+                                <label class="form-check-label" for="interest_other">Other</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                        <!-- Text area-->
+
+                            <label for="comments" class="form-label">Additional Comments:</label>
+                            <textarea class="form-control" id="comments" formControlName="comments" rows="3"></textarea>
+                        </div>
+                       
+                        <div class="col-6">
+                            <label class="form-label" for="recommend">Recommending
+                                this school to other prospective students:</label>
+                        <!-- Dropdown-->
+
+                            <select class="form-select form-control" aria-label="Select" formControlName="recommendation">
+                                <option value="">Select</option>
+                                <option value="Very Likely">Very Likely</option>
+                                <option value="Likely">Likely</option>
+                                <option value="Unlikely">Unlikely</option>
+                            </select>
+                        </div>
+
+                     
+                        
+
+
+                        <div class="col-12 mt-2">
+                        <!--Submit button -->
+
+                        <button type="submit" class="btn btn-primary green mr-3" (click)="submit()">Submit</button>
+                        <!--Reset button -->
+                        <button class="btn btn-primary green" onclick="reset()">Reset</button>
+                        </div>
+                    </form>
+
+
+                </div>
+        </div>
+    </div>
+
